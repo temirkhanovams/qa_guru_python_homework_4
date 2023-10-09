@@ -54,12 +54,7 @@ def test_unique_elements():
 def test_dicts():
     first = ["a", "b", "c", "d", "e"]
     second = [1, 2, 3, 4, 5]
-    d = {
-        first[0]: second[0],
-        first[1]: second[1],
-        first[2]: second[2],
-        first[3]: second[3],
-        first[4]: second[4]
-    }
+    d = dict(zip(first, second))
+    print(d)
     assert isinstance(d, dict)
     assert len(d) == 5
