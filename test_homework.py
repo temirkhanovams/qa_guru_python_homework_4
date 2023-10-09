@@ -1,4 +1,5 @@
 import math
+import random
 
 
 def test_greeting():
@@ -26,39 +27,39 @@ def test_circle():
 
 
 def test_random_list():
-    """
-    Создайте список из 10 случайных чисел от 1 до 100 и отсортируйте его по возрастанию.
-    """
-
-    # TODO создайте список
-    l = []
+    l = [random.randint(1, 100),
+         random.randint(1, 100),
+         random.randint(1, 100),
+         random.randint(1, 100),
+         random.randint(1, 100),
+         random.randint(1, 100),
+         random.randint(1, 100),
+         random.randint(1, 100),
+         random.randint(1, 100),
+         random.randint(1, 100)
+         ]
+    l.sort()
     assert len(l) == 10
     assert l[0] < l[-1]
 
 
 def test_unique_elements():
-    """
-    Удалите из списка все повторяющиеся элементы
-    """
     l = [1, 2, 3, 4, 5, 5, 5, 6, 7, 8, 8, 9, 10, 10]
-    # TODO удалите повторяющиеся элементы
-
+    l = list(set(l))
     assert isinstance(l, list)
     assert len(l) == 10
     assert l == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 
 def test_dicts():
-    """
-    Создайте словарь из двух списков.
-    Используйте первый список как ключи, а второй - как значения.
-    Выведите на экран все значения словаря.
-    Подсказка: используй встроенную функцию zip.
-    """
     first = ["a", "b", "c", "d", "e"]
     second = [1, 2, 3, 4, 5]
-    # TODO создайте словарь
-    d = {}
-
+    d = {
+        first[0]: second[0],
+        first[1]: second[1],
+        first[2]: second[2],
+        first[3]: second[3],
+        first[4]: second[4]
+    }
     assert isinstance(d, dict)
     assert len(d) == 5
